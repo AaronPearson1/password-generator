@@ -9,10 +9,10 @@ var symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "{", "}", "[", 
 
 // Variable Declarations
 var passwordLength = "";
-var confirmLowerCase;
-var confirmUpperCase;
-var confirmNumbers;
-var confirmSymbols;
+var lowerCaseCharacter;
+var upperCaseCharacter;
+var numbersCharacter;
+var symbolsCharacter;
 
 // Users Prompts. This will confirm password length criteria as well as user choice of password character types
 function generatePassword() {
@@ -23,36 +23,35 @@ function generatePassword() {
     alert("Password length must be between 8-128 characters! Please try again.");
     var passwordLength = window.prompt("How many characters would you like your password to be?");
   }
-    alert("Your password will have " + passwordLength + " characters.");
 
-  var confirmLowerCase = confirm("Click OK to confirm if you would like your password to include lowercase letters");
-  var confirmUpperCase = confirm("Click OK to confirm if you would like your password to include uppercase letters");
-  var confirmNumbers = confirm("Click OK to confirm if you would like your password to include numerical values");
-  var confirmSymbols = confirm("Click OK to confirm if you would like your password to include symbols and/or special characters");
+  var lowerCaseCharacter = confirm("Would lyou ike your password to include lowercase letters?");
+  var upperCaseCharacter = confirm("Would you like your password to include uppercase letters?");
+  var numbersCharacter = confirm("Would like your password to include numerical values?");
+  var symbolsCharacter = confirm("Would like your password to include symbols and/or special characters?");
     //Loop if conditions not met
-    while (!(confirmLowerCase || confirmUpperCase || confirmNumbers || confirmSymbols)) {
+    while (!(lowerCaseCharacter || upperCaseCharacter || numbersCharacter || symbolsCharacter)) {
       alert("You must select at least one character type!");
-      var confirmLowerCase = confirm("Click OK to confirm if you would like your password to include lowercase letters");
-      var confirmUpperCase = confirm("Click OK to confirm if you would like your password to include uppercase letters");
-      var confirmNumbers = confirm("Click OK to confirm if you would like your password to include numerical values");
-      var confirmSymbols = confirm("Click OK to confirm if you would like your password to include symbols and/or special characters");
+      var lowerCaseCharacter = confirm("Would like your password to include lowercase letters");
+      var upperCaseCharacter = confirm("Would like your password to include uppercase letters");
+      var numbersCharacter = confirm("Would like your password to include numerical values");
+      var symbolsCharacter = confirm("Would you like your password to include symbols and/or special characters");
     } 
 
       var randomCharacters = []
 
-      if (confirmLowerCase) {
+      if (lowerCaseCharacter) {
         randomCharacters = randomCharacters.concat(lowercase)
       }
 
-      if (confirmUpperCase) {
+      if (upperCaseCharacter) {
         randomCharacters = randomCharacters.concat(uppercase)
       }
 
-      if (confirmNumbers) {
+      if (numbersCharacter) {
         randomCharacters = randomCharacters.concat(numbers)
       }
 
-      if (confirmSymbols) {
+      if (symbolsCharacter) {
         randomCharacters = randomCharacters.concat(symbols)
       }
 

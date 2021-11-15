@@ -38,34 +38,34 @@ function generatePassword() {
       var confirmSymbols = confirm("Click OK to confirm if you would like your password to include symbols and/or special characters");
     } 
 
-      var passwordCharacters = []
+      var randomCharacters = []
 
       if (confirmLowerCase) {
-        passwordCharacters = passwordCharacters.concat(lowercase)
+        randomCharacters = randomCharacters.concat(lowercase)
       }
 
       if (confirmUpperCase) {
-        passwordCharacters = passwordCharacters.concat(uppercase)
+        randomCharacters = randomCharacters.concat(uppercase)
       }
 
       if (confirmNumbers) {
-        passwordCharacters = passwordCharacters.concat(numbers)
+        randomCharacters = randomCharacters.concat(numbers)
       }
 
       if (confirmSymbols) {
-        passwordCharacters = passwordCharacters.concat(symbols)
+        randomCharacters = randomCharacters.concat(symbols)
       }
 
-      console.log(passwordCharacters)
+      console.log(randomCharacters)
 
       // Select random characters from the arrays created at the top of JS file
-      var randomPassword = ""
+      var securePassword = ""
 
       for (var i = 0; i < passwordLength; i++) {
-        randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-        console.log(randomPassword)
+        securePassword = securePassword + randomCharacters[Math.floor(Math.random() * randomCharacters.length)];
+        console.log(securePassword)
       }
-      return randomPassword
+      return securePassword
 }
 // Password to display in the "Your Secure Password" textbox
 function writePassword() {
